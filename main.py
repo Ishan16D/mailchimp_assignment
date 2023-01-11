@@ -25,7 +25,7 @@ with open(filename) as file:
 
         line = line[0].split(' ')
 
-        # Throw an error if an input character in non numeric (or tab is not delimiter)
+        # Throw an error if an input character in non-numeric (or tab is not delimiter)
         line = [catch_invalid(num) for num in line]
 
         # Convert list to numpy array

@@ -16,23 +16,30 @@ def get_second_checksum(line: np.ndarray):
     # Iterate over numbers in the array as divisors
     for i in line:
 
-        # Remove number being used as it will divide itself
-        temp_line = np.delete(line, np.where(line == i)[0][0])
+        # Check to ensure a divisor is not 0
+        if i == 0:
+            pass
 
-        # Calculate remainder using all other numbers as dividend
-        rem_arr = np.remainder(temp_line, i)
+        #Run code otherwise
+        else:
 
-        # Check if any numbers divide cleanly (remainder of 0)
-        if len(np.where(rem_arr == 0)[0]) >0:
+            # Remove number being used as it will divide itself
+            temp_line = np.delete(line, np.where(line == i)[0][0])
 
-            # Get the first dividend for i
-            first_div_ind = np.where(rem_arr == 0)[0][0]
+            # Calculate remainder using all other numbers as dividend
+            rem_arr = np.remainder(temp_line, i)
 
-            # Incremement by the result of the found dividend and divisor
-            div_result += int(np.divide(temp_line[first_div_ind], i))
+            # Check if any numbers divide cleanly (remainder of 0)
+            if len(np.where(rem_arr == 0)[0]) >0:
 
-            # End loop when pair is found
-            break
+                # Get the first dividend for i
+                first_div_ind = np.where(rem_arr == 0)[0][0]
+
+                # Increment by the result of the found dividend and divisor
+                div_result += int(np.divide(temp_line[first_div_ind], i))
+
+                # End loop when pair is found
+                break
 
     return div_result
 
