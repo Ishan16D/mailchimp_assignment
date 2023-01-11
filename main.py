@@ -36,13 +36,13 @@ with open(filename) as file:
 
             checksum_minmax += get_first_checksum(line)
             checksum_div += get_second_checksum(line)
-            print(f'Done calculating checksums for row {line_count}')
+            #print(f'Done calculating checksums for row {line_count}')
         except Exception as err:
             print(err)
             print(f'Error occured on line {line_count}')
 
 
 end = time.time()
-print(checksum_minmax)
-print(checksum_div)
-print(f'Calculations took {end-start}')
+print(f'The first checksum is {checksum_minmax}')
+print(f'The second checksum is {checksum_div}')
+print(f'Calculations took {end-start} s')
