@@ -22,9 +22,9 @@ Please enter the filename with extension you would like to test:input.txt
 
 The inputs folder has five available files to test. Two (input and test) which were provided by the assignment and three (bigger_input, comma, and input_with_char) which I created to test different cases.
 
-bigger_input.txt is 1MB in size
-comma.txt uses commas rather than tabs as delimiters
-input_with_char includes a word instead of a number
+- bigger_input.txt is 1MB in size
+- comma.txt uses commas rather than tabs as delimiters
+- input_with_char includes a word instead of a number
 
 ## Expected behavior
 
